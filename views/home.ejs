@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+       <% if (locals.user) { %>
+        <h3> Hiii <%= user.fullName %> </h3>
+       <% } %>
+       <p>Manage Your Day to Day Activities !</p>
+       <%- include('./partials/script') %>
+</body>
+</html>

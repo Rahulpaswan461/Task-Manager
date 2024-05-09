@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/nav')%>
+     <% projects.forEach(project => { %>
+        <div class="cols" style="display: flex;cursor: pointer;">
+            <div class="card" style="width: 18rem;margin-top:1rem;margin-left: 1rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= project.title %></h5>
+                  <a href="/project/<%=project.id %>" class="btn btn-primary">View Task</a>
+                </div>
+              </div>
+            </div>
+     <% }) %>
+    <%- include("./partials/script") %>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Document</title>
+</head>
+<body>
+     <%- include('./partials/nav') %>
+      <% if (locals.projects) { %>
+        <h1><%= projects.title %></h1>
+        <% todos.forEach(todo => { %>
+            <ul class="list-group">
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                  <label class="form-check-label" for="firstCheckbox"><%= todo.description %></label>
+                  <button class="btn btn-primary"><a href="/todo/delete/<%= projects._id %>/<%= todo._id %>" style="color:#fff;text-decoration: none;">Delete</a></button>
+                  <button class="btn btn-primary"><a href="/todo/update/<%= projects._id %>/<%= todo._id %>" style="color:#fff; text-decoration: none;">Update</a></button>
+                </li>
+              </ul>
+        <% }) %>
+      <% } %>
+      <% if (locals.projects) { %>
+        <button class="btn btn-primary"><a href="/todo/add/<%= projects._id %>" style="color:#fff">ADD Item</a></button>
+      <% } %>
+      
+       <div class="container mt-2">
+    <%- include('./partials/script') %>
+    </div>
+</body>
+</html>
