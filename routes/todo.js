@@ -51,27 +51,6 @@ router.post("/add/:projectId", async (req, res) => {
         return res.status(500).json({ msg: "Internal Server error !!!" });
     }
 });
-//to get the list of all the todos corresponding to the project id
-// router.get("/add/:projectId",async (req,res)=>{
-//     try{
-//        const projectId = req.params.projectId
-//        const projectDetail = await Project.findById(projectId)
-//        console.log(projectDetail)
-//        if(!projectDetail)
-//          return res.status(404).json({msg:"Project not found for the given id !!!"})
-
-//        const todoDetails = await Promise.all(projectDetail.Todos.map(async (todoId) => {
-//         const todo = await Todo.findById(todoId);
-//         return todo.description;
-//     }));
-//        return res.status(200).json(todoDetails)
-
-//     }
-//     catch(error){
-//         console.log(error)
-//         return res.status(500).json({msg:"Internal Server Error !!"})
-//     }
-// })
 
 //update the status of the todo
 router.patch("/add/status/:todoId",async (req,res)=>{
