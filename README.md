@@ -27,23 +27,23 @@ The Todo Manager Application is a web-based tool designed to help users manage t
 - POST /user/signin: Log in with existing user credentials.
 
 - ## Project
-- GET /api/projects
+- GET /projects
 - Description: Get all projects created by the authenticated user.
-- GET /api/projects/:projectId
+- GET /projects/:projectId
 - Description: Get project details by project ID.
-- POST /api/projects
+- POST /projects
 - Description: Create a new project.
-- PATCH /api/projects/:projectId
+- PATCH /projects/:projectId
 - Description: Update a project by ID.
 
 - ## TODO
-- GET /api/todos/:projectId
+- GET /todos/:projectId
 - Description: Get all todos for a specific project.
-- POST /api/todos/:projectId
+- POST /todos/:projectId
 - Description: Create a new todo for a specific project.
-- PUT /api/todos/:todoId
+- PUT /todos/:todoId
 - Description: Update a todo by ID.
-- DELETE /api/todos/:todoId
+- DELETE /todos/:todoId
 - Description: Delete a todo by ID.
 
 - # Security
