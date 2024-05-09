@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const express = require("express")
 const userRoute = require("./routes/user");
 const { connectMongoDB } = require("./connection");
@@ -8,9 +10,9 @@ const todoRoute = require("./routes/todo")
 const path = require("node:path")
 
 const app = express()
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 1240;
 
-connectMongoDB("mongodb://127.0.0.1:27017/TODO-APP")
+connectMongoDB(process.env.MONGO_URL)
 .then(()=>console.log("MongoDB is connected"))
 .catch(()=>console.log("There is some error"))
 
